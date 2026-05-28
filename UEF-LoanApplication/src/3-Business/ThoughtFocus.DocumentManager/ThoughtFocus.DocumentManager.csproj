@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-Infrastructure\ThoughtFocus.Common.Exceptions\ThoughtFocus.Common.Exceptions.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Domain\ThoughtFocus.Domain.csproj" />
+    <ProjectReference Include="..\..\6-DocumentRepository\ThoughtFocus.DocumentRepository.Core\ThoughtFocus.DocumentRepository.Core.csproj" />
+    <ProjectReference Include="..\..\6-DocumentRepository\ThoughtFocus.DocumentRepository.Domain\ThoughtFocus.DocumentRepository.Domain.csproj" />
+    <ProjectReference Include="..\ThoughtFocus.Validations\ThoughtFocus.Validations.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Repository\ThoughtFocus.Repository.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.DataAccess\ThoughtFocus.DataAccess.csproj" />
+    <ProjectReference Include="..\..\6-DocumentRepository\ThoughtFocus.DocumentRepository.StorageProvider\ThoughtFocus.DocumentRepository.StorageProvider.csproj" />
+    <ProjectReference Include="..\ThoughtFocus.Workflow\ThoughtFocus.Workflow.csproj" />
+  </ItemGroup>
+
+</Project>

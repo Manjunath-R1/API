@@ -1,0 +1,74 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- ReleaseCandidate
+
+pool:
+ vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: UseDotNet@2 
+  displayName: ".NET Core 3.1.x"
+  inputs:
+    version: '3.1.x'
+    packageType: sdk
+
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: "Test"
+  inputs:
+    command: test
+    projects: '**/*tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: "Publish"
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '-r linux-x64 --configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
+
+- task: DotNetCoreCLI@2
+  displayName: 'Initialize EntityFrameworkCore'
+  inputs:
+    command: custom
+    custom: tool
+    arguments: 'install --global dotnet-ef --version 6.0.5'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Create application migration'
+  inputs:
+    command: custom
+    custom: ef
+    arguments: 'migrations script -i -o  $(Build.ArtifactStagingDirectory)/migration.sql --project /home/vsts/work/1/s/src/ThoughtFocus.App --context ApplicationDBContext'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Create workflow migration'
+  inputs:
+    command: custom
+    custom: ef
+    arguments: 'migrations script -i -o  $(Build.ArtifactStagingDirectory)/workflowmigration.sql --project /home/vsts/work/1/s/src/ThoughtFocus.App --context WorkFlowContext'
+
+- task: PublishBuildArtifacts@1
+  displayName: "Upload Artifacts"
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'uefapi' 
+
+
+    

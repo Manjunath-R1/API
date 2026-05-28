@@ -1,0 +1,56 @@
+﻿namespace ThoughtFocus.Common.WorkFlowRepository
+{
+    using System;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using Microsoft.EntityFrameworkCore;
+
+    public abstract class AbstractEFApplicationBaseRepository<T> : IEFApplicationBaseRepository<T>
+        where T : class
+    {
+        #region Fields
+
+        private DbContext context;
+
+        #endregion Fields
+
+        #region Constructors
+
+        public AbstractEFApplicationBaseRepository(DbContext context)
+        {
+            this.context = context;
+        }
+
+        #endregion Constructors
+
+        #region Methods
+
+        public virtual void Add(T entity)
+        {
+            this.context.Set<T>().Add(entity);
+        }
+
+        public IQueryable<T> FindBy(Expression<Func<T, bool>> predicate)
+        {
+            return this.context.Set<T>().Where(predicate);
+        }
+
+        public T FirstOrDefault(Expression<Func<T, bool>> predicate)
+        {
+            return this.context.Set<T>().Where(predicate).FirstOrDefault();
+        }
+
+        public virtual IQueryable<T> GetAll()
+        {
+            return this.context.Set<T>();
+        }
+
+        public virtual void 
+            Update(T entity)
+        {
+            this.context.Entry(entity).State = EntityState.Modified;
+        }
+
+        #endregion Methods
+    }
+}

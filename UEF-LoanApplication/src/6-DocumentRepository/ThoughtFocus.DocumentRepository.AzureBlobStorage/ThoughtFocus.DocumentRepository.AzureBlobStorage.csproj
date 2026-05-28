@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.8.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThoughtFocus.DocumentRepository.StorageProvider\ThoughtFocus.DocumentRepository.StorageProvider.csproj" />
+    <ProjectReference Include="..\ThoughtFocus.DocumentRepository.Domain\ThoughtFocus.DocumentRepository.Domain.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Domain\ThoughtFocus.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

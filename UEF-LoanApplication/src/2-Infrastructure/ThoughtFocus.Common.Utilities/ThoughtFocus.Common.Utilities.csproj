@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThoughtFocus.Common.Exceptions\ThoughtFocus.Common.Exceptions.csproj" /> 
+        <ProjectReference Include="..\..\1-Core\ThoughtFocus.Domain\ThoughtFocus.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    
+    <PackageReference Include="MailKit" Version="2.11.1" />
+    
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" /> 
+  </ItemGroup>
+
+</Project>

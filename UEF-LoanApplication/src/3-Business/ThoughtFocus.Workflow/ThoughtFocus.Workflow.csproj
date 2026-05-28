@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\5-External\ThoughtFocus.Common.Workflow.Core\ThoughtFocus.Common.Workflow.Core.csproj" />
+    <ProjectReference Include="..\..\5-External\ThoughtFocus.Common.Workflow.DbPersistance\ThoughtFocus.Common.Workflow.DbPersistance.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Common.WorkFlowDataAccess\ThoughtFocus.Common.WorkFlowDataAccess.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Domain\ThoughtFocus.Domain.csproj" />
+    <ProjectReference Include="..\..\2-Infrastructure\ThoughtFocus.Common.Exceptions\ThoughtFocus.Common.Exceptions.csproj" />
+    <ProjectReference Include="..\..\3-Business\ThoughtFocus.RoleProvider\ThoughtFocus.RoleProvider.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Repository\ThoughtFocus.Repository.csproj" />
+    <ProjectReference Include="..\..\3-Business\ThoughtFocus.Business\ThoughtFocus.Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>

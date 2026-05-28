@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThoughtFocus.DocumentRepository.DataAccess.Neo4j\ThoughtFocus.DocumentRepository.DataAccess.Neo4j.csproj" />
+    <ProjectReference Include="..\..\2-Infrastructure\ThoughtFocus.Common.Exceptions\ThoughtFocus.Common.Exceptions.csproj" />
+    <ProjectReference Include="..\ThoughtFocus.DocumentRepository.Domain\ThoughtFocus.DocumentRepository.Domain.csproj" />
+    <ProjectReference Include="..\ThoughtFocus.DocumentRepository.Repository.Core\ThoughtFocus.DocumentRepository.Repository.Core.csproj" />
+    <ProjectReference Include="..\ThoughtFocus.DocumentRepository.Repository.Neo4j\ThoughtFocus.DocumentRepository.Repository.Neo4j.csproj" />
+    <ProjectReference Include="..\ThoughtFocus.DocumentRepository.StorageProvider\ThoughtFocus.DocumentRepository.StorageProvider.csproj" />
+  </ItemGroup>
+
+</Project>

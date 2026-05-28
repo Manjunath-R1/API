@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Repository\ThoughtFocus.Repository.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Domain\ThoughtFocus.Domain.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.DataAccess\ThoughtFocus.DataAccess.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>

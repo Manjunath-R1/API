@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\3-Business\ThoughtFocus.Business\ThoughtFocus.Business.csproj" />
+    <ProjectReference Include="..\..\3-Business\ThoughtFocus.Validations\ThoughtFocus.Validations.csproj" />
+    <ProjectReference Include="..\..\3-Business\ThoughtFocus.DocumentManager\ThoughtFocus.DocumentManager.csproj" />
+    <ProjectReference Include="..\..\3-Business\ThoughtFocus.RoleProvider\ThoughtFocus.RoleProvider.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Domain\ThoughtFocus.Domain.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.DataAccess\ThoughtFocus.DataAccess.csproj" />
+    <ProjectReference Include="..\..\3-Business\ThoughtFocus.Validations\ThoughtFocus.Validations.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Repository\ThoughtFocus.Repository.csproj" />
+    <ProjectReference Include="..\..\3-Business\ThoughtFocus.Workflow\ThoughtFocus.Workflow.csproj" />
+    <ProjectReference Include="..\..\5-External\ThoughtFocus.Common.Workflow.Core\ThoughtFocus.Common.Workflow.Core.csproj" />
+    <ProjectReference Include="..\..\2-Infrastructure\ThoughtFocus.Common.Utilities\ThoughtFocus.Common.Utilities.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Common.WorkFlowRepository\ThoughtFocus.Common.WorkFlowRepository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="UAParser" Version="3.1.46" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>

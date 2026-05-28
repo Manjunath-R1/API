@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Repository\ThoughtFocus.Repository.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.Domain\ThoughtFocus.Domain.csproj" />
+    <ProjectReference Include="..\..\1-Core\ThoughtFocus.DataAccess\ThoughtFocus.DataAccess.csproj" />
+    <ProjectReference Include="..\..\2-Infrastructure\ThoughtFocus.Constants\ThoughtFocus.Constants.csproj" />
+    <ProjectReference Include="..\ThoughtFocus.Validations\ThoughtFocus.Validations.csproj" />
+    <ProjectReference Include="..\..\2-Infrastructure\ThoughtFocus.Common.Exceptions\ThoughtFocus.Common.Exceptions.csproj" />
+    <ProjectReference Include="..\..\2-Infrastructure\ThoughtFocus.Common.Utilities\ThoughtFocus.Common.Utilities.csproj" />
+    <ProjectReference Include="..\..\5-External\ThoughtFocus.Common.Workflow.Core\ThoughtFocus.Common.Workflow.Core.csproj" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.5.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.8" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>
